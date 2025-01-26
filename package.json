@@ -1,27 +1,29 @@
 {
-  "name": "medical-qr-backend",
+  "name": "medicine-expiry-tracker-backend",
   "version": "1.0.0",
+  "description": "Backend for Medicine Expiry Tracker",
   "main": "src/index.js",
-  "type": "module",
   "scripts": {
+    "start": "node src/index.js",
     "dev": "nodemon src/index.js",
-    "start": "node src/index.js"
+    "postinstall": "prisma generate"
+  },
+  "engines": {
+    "node": ">=16.0.0"
   },
   "dependencies": {
+    "@prisma/client": "^5.8.1",
     "@google/generative-ai": "^0.1.3",
-    "@prisma/client": "^5.0.0",
     "cors": "^2.8.5",
-    "dayjs": "^1.11.13",
+    "dotenv": "^16.3.1",
     "express": "^4.18.2",
-    "multer": "^1.4.5-lts.1",
-    "node-cron": "^3.0.2",
-    "node-fetch": "^3.3.2",
-    "nodemailer": "^6.10.0",
-    "resend": "^4.1.1",
-    "web-push": "^3.6.7"
+    "node-cron": "^3.0.3",
+    "node-fetch": "^2.7.0",
+    "resend": "^2.1.0",
+    "web-push": "^3.6.6"
   },
   "devDependencies": {
-    "nodemon": "^3.0.1",
-    "prisma": "^5.0.0"
+    "nodemon": "^3.0.2",
+    "prisma": "^5.8.1"
   }
 }
