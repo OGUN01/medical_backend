@@ -22,8 +22,13 @@ export class NotificationService {
 
     // Skip time check if forceCheck is true
     if (!forceCheck) {
-      const currentTime = dayjs().format('HH:mm');
-      if (currentTime !== settings.notificationTime) return;
+      const now = dayjs();
+      const targetTime = dayjs(settings.notificationTime, 'HH:mm');
+      const currentMinute = now.hour() * 60 + now.minute();
+      const targetMinute = targetTime.hour() * 60 + targetTime.minute();
+      
+      // Check if current time is within 1 minute before or after target time
+      if (Math.abs(currentMinute - targetMinute) > 1) return;
     }
 
     console.log('Checking notifications...');
