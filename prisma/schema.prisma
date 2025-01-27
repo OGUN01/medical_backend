@@ -44,4 +44,5 @@ model NotificationLog {
   channel   String   // EMAIL, PUSH
   status    String   // success, failed
   message   String
+  email     String?  // Store the email address for email notifications
 }
